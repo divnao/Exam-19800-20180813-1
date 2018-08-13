@@ -19,3 +19,15 @@
 //         console.log(res);
 //     });
 // }
+
+// $(document).ready(function () {
+//     $("#login_btn").click(function () {
+//         var user_id = $("#user_id").val();
+//         if (user_id == "") {
+//             alert("用户名为空! 请填写完整！");
+//         }
+//     });
+// });
+
+
+// readme: choose one of the two comment for null check.

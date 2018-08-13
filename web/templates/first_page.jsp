@@ -10,10 +10,76 @@
 <head>
     <meta charset="UTF-8">
     <title>首页-电影租赁管理系统</title>
-    <link type="text/css" rel="stylesheet" href="../static/css/first_page.css"/>
+    <%--<link type="text/css" rel="stylesheet" href="../static/css/first_page.css"/>--%>
     <script src="../static/js/jquery-3.3.1.min.js"></script>
-    <!--<script src="../static/js/first_page.js"></script>-->
+    <script src="../static/js/first_page.js"></script>
+    <style>
+        #page_head {
+            border: lightblue solid 1px;
+            height: 80px;
+            width: auto;
+            text-align: center;
+            border-radius: 5px;
+            color: gainsboro;
+            font-family: "AR PL UKai CN";
+            font-size: large;
+            background-color: darkslategray;
+        }
 
+        #head_line {
+            font-size: xx-large;
+            padding-top: 20px;
+        }
+
+        #page_medium{
+            padding-top: 50px;
+        }
+
+        #page_medium_left {
+            padding-left: 50px;
+        }
+
+        #img_1 {
+            padding-left: 70px;
+        }
+
+        #login {
+            float: right;
+            border: 2px solid lightblue;
+            width: 300px;
+            height: 250px;
+            margin-top: 35px;
+            border-radius: 8px;
+            margin-right: 150px;
+            text-align: center;
+            background-color: deepskyblue;
+        }
+
+        .login_item {
+            width: 200px;
+            height: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: aqua solid 2px;
+        }
+
+        #login_btn {
+            background-color: aqua;
+        }
+
+        #page_foot {
+            height: 80px;
+            text-align: center;
+            margin-bottom: 0px;
+            color: dimgrey;
+            font-size: small;
+
+            width: 100%;
+            position:absolute;
+            bottom:0px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -30,7 +96,7 @@
     <!--log in module-->
     <div id="login">
         <p ><strong>电影租赁管理系统</strong></p>
-        <form id="user_info" name="user_info" action="www.baidu.com" method="post">
+        <form id="user_info" name="user_info" action="http://localhost:8080/login" method="post">
             <input id="user_id" name="user_name" class="login_item" type="text" placeholder="用户名">
             <input id="login_btn" type="submit" class="login_item" value="立即登录">
         </form>
@@ -48,29 +114,15 @@
     </div>
 </div>
 </body>
-
-<script>
-    $(document).ready(function () {
-        $("#login_btn").bind("click", getUserInfo);
-    });
-
-    function getUserInfo() {
-        var user_id = $("#user_id").val();
-        if (user_id == "") {
-            alert("用户名为空， 请填写完整！");
-        } else {
-            var user_login_info = {};
-            user_login_info.user_id = $("#user_id").val();
-            var data = JSON.stringify(user_login_info);
-            logIn(data);
-        }
-    }
-
-    function logIn(data) {
-        $.post('http://localhost:8888', data, function (res) {
-            console.log(res);
+    <script>
+        $(document).ready(function () {
+            $("#login_btn").click(function () {
+                var user_id = $("#user_id").val();
+                if (user_id == "" || password == "") {
+                    alert("用户名为空， 请填写完整！");
+                }
+            });
         });
-    }
-</script>
+    </script>
 
 </html>

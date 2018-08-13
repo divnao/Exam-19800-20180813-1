@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <title>新增电影</title>
 </head>
-<link type="text/css" rel="stylesheet" href="../static/css/first_page.css"/>
+<%--<link type="text/css" rel="stylesheet" href="../static/css/first_page.css"/>--%>
 <script src="../static/js/jquery-3.3.1.min.js"></script>
 <style>
 
@@ -51,6 +51,74 @@
     #confirm_add, #confirm_reset {
         margin-top: 10px;
         margin-left: 70px;
+    }
+
+</style>
+
+<style>
+    #page_head {
+        border: lightblue solid 1px;
+        height: 80px;
+        width: auto;
+        text-align: center;
+        border-radius: 5px;
+        color: gainsboro;
+        font-family: "AR PL UKai CN";
+        font-size: large;
+        background-color: darkslategray;
+    }
+
+    #head_line {
+        font-size: xx-large;
+        padding-top: 20px;
+    }
+
+    #page_medium{
+        padding-top: 50px;
+    }
+
+    #page_medium_left {
+        padding-left: 50px;
+    }
+
+    #img_1 {
+        padding-left: 70px;
+    }
+
+    #login {
+        float: right;
+        border: 2px solid lightblue;
+        width: 300px;
+        height: 250px;
+        margin-top: 35px;
+        border-radius: 8px;
+        margin-right: 150px;
+        text-align: center;
+        background-color: deepskyblue;
+    }
+
+    .login_item {
+        width: 200px;
+        height: 30px;
+        border-radius: 10px;
+        margin-top: 30px;
+        border: aqua solid 2px;
+    }
+
+    #login_btn {
+        background-color: aqua;
+    }
+
+    #page_foot {
+        height: 80px;
+        text-align: center;
+        margin-bottom: 0px;
+        color: dimgrey;
+        font-size: small;
+
+        width: 100%;
+        position:absolute;
+        bottom:0px;
     }
 
 </style>
