@@ -158,8 +158,9 @@
                     <td>
                         <select id="select_language" name="select_language">
                             <option id="choose_language" name="choose_language" value="0">语言</option>
-                            <option id="chinese" name="chinese" value="1">简体中文</option>
-                            <option id="english" name="english" value="2">English</option>
+                            <option id="chinese" name="english" value="1">English</option>
+                            <option id="english" name="chinese" value="2">Chinese</option>
+
                         </select>
                     </td>
                 </tr>

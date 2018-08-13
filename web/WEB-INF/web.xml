@@ -11,8 +11,8 @@
     </servlet>
 
     <servlet>
-        <servlet-name>LogIn</servlet-name>
-        <servlet-class>com.huh.servlet.LogIn</servlet-class>
+        <servlet-name>LogInServlet</servlet-name>
+        <servlet-class>com.huh.servlet.LogInServlet</servlet-class>
     </servlet>
     
     <servlet-mapping>
@@ -21,7 +21,7 @@
     </servlet-mapping>
 
     <servlet-mapping>
-        <servlet-name>LogIn</servlet-name>
+        <servlet-name>LogInServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     

@@ -13,6 +13,14 @@
     <%--<link type="text/css" rel="stylesheet" href="../static/css/first_page.css"/>--%>
     <script src="../static/js/jquery-3.3.1.min.js"></script>
     <script src="../static/js/first_page.js"></script>
+    <script type="text/javascript">
+        function checkNull(form) {
+            var user_name = document.forms.item(0).toString();
+            if (user_name==null || user_name=="") {
+                alert("用户名为空, 请重新填写!");
+            }
+        }
+    </script>
     <style>
         #page_head {
             border: lightblue solid 1px;
@@ -31,7 +39,7 @@
             padding-top: 20px;
         }
 
-        #page_medium{
+        #page_medium {
             padding-top: 50px;
         }
 
@@ -75,8 +83,8 @@
             font-size: small;
 
             width: 100%;
-            position:absolute;
-            bottom:0px;
+            position: absolute;
+            bottom: 0px;
         }
 
     </style>
@@ -85,7 +93,7 @@
 
 <!--page head-->
 <div id="page_head">
-    <div id="head_line"><strong>电影租赁管理系统</strong> </div>
+    <div id="head_line"><strong>电影租赁管理系统</strong></div>
 </div>
 
 <!--head medium-->
@@ -95,10 +103,10 @@
 
     <!--log in module-->
     <div id="login">
-        <p ><strong>电影租赁管理系统</strong></p>
-        <form id="user_info" name="user_info" action="http://localhost:8080/login" method="post">
+        <p><strong>电影租赁管理系统</strong></p>
+        <form id="user_info" name="userInfo" action="http://localhost:8080/login" method="post">
             <input id="user_id" name="user_name" class="login_item" type="text" placeholder="用户名">
-            <input id="login_btn" type="submit" class="login_item" value="立即登录">
+            <input id="login_btn" type="submit" class="login_item" value="立即登录" onclick="checkNull(this);">
         </form>
         <!--<button id="login_btn" class="login_item">立即登录</button>-->
     </div>
@@ -114,15 +122,15 @@
     </div>
 </div>
 </body>
-    <script>
-        $(document).ready(function () {
-            $("#login_btn").click(function () {
-                var user_id = $("#user_id").val();
-                if (user_id == "" || password == "") {
-                    alert("用户名为空， 请填写完整！");
-                }
-            });
-        });
-    </script>
+<%--<script>--%>
+<%--$(document).ready(function () {--%>
+<%--$("#login_btn").click(function () {--%>
+<%--var user_id = $("#user_id").val();--%>
+<%--if (user_id == "" || password == "") {--%>
+<%--alert("用户名为空， 请填写完整！");--%>
+<%--}--%>
+<%--});--%>
+<%--});--%>
+<%--</script>--%>
 
 </html>
