@@ -1,8 +1,11 @@
 package com.huh.servlet;
 
+import com.google.gson.Gson;
 import com.huh.bean.User;
 import com.huh.service.CheckUserService;
+import com.huh.service.MovieListService;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +15,7 @@ import java.io.IOException;
 public class LogInServlet extends HttpServlet {
 
     private CheckUserService cus = new CheckUserService();
+    private MovieListService mls = new MovieListService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +34,14 @@ public class LogInServlet extends HttpServlet {
             user.setFirstName(first_name);
             boolean checkEd = cus.check(user);
             if (checkEd) {
-                resp.sendRedirect("http://" + req.getServerName() + ":" + req.getServerPort() + "/templates/movie_list.jsp");
+                String json = new Gson().toJson(mls.getMovieList());
+                resp.setContentType("application/json");
+                resp.setCharacterEncoding("UTF-8");
+                resp.getWriter().write(json);
+                String redirestURL = "http://" + req.getServerName() + ":" + req.getServerPort() + "/templates/movie_list.jsp";
+                RequestDispatcher rd = req.getRequestDispatcher(redirestURL);
+                rd.forward(req, resp);
+//                resp.sendRedirect("http://" + req.getServerName() + ":" + req.getServerPort() + "/templates/movie_list.jsp");
             } else {
                 resp.sendRedirect("http://" + req.getServerName() + ":" + req.getServerPort());
             }
