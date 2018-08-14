@@ -37,12 +37,12 @@ public class LogInServlet extends HttpServlet {
                 String json = new Gson().toJson(mls.getMovieList());
                 resp.setContentType("application/json");
                 resp.setCharacterEncoding("UTF-8");
-                resp.getWriter().write(json);
+                req.setAttribute("data", json);
                 String redirestURL = "http://" + req.getServerName() + ":" + req.getServerPort() + "/templates/movie_list.jsp";
-                RequestDispatcher rd = req.getRequestDispatcher(redirestURL);
-                rd.forward(req, resp);
-//                resp.sendRedirect("http://" + req.getServerName() + ":" + req.getServerPort() + "/templates/movie_list.jsp");
+//                req.getRequestDispatcher(redirestURL).forward(req, resp);
+                resp.sendRedirect(redirestURL);
             } else {
+                // log in check failed, return to the first page.
                 resp.sendRedirect("http://" + req.getServerName() + ":" + req.getServerPort());
             }
         }

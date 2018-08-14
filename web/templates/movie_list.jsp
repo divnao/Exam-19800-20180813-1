@@ -152,6 +152,7 @@
                 </td>
             </tr>
         </table>
+            电影列表:<%= request.getAttribute("data") %>
     </div>
 </div>
 
