@@ -25,4 +25,14 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <servlet-name>AddCount</servlet-name>
+        <servlet-class>com.huh.servlet.AddServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AddCount</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
